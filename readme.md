@@ -1,4 +1,74 @@
-# Automação de Adição de Flashcards
+# Flashcard Addition Automation
+
+This project automates the process of adding flashcards to a system using data previously organized in an Excel spreadsheet. The script reads the information and inserts data into specific interface fields through automated clicks and typing.
+
+---
+
+## Technologies Used
+
+* Python 3
+* openpyxl: for reading Excel spreadsheets
+* pyautogui: for automating clicks and typing in the interface
+
+---
+
+## How It Works
+
+The script executes the following steps automatically:
+
+1. Opens the `flashcards_constitucional.xlsx` spreadsheet and accesses the `Flashcards` sheet.
+2. For each row, fills in:
+   * Front of the flashcard (Front field) with the value from the first column.
+   * Back of the flashcard (Back field) with the value from the second column.
+   * Flashcard tag (Tag field) with the value from the third column  **only once on the first execution** .
+3. After filling in the fields, clicks the add flashcard button.
+4. Repeats the process for all flashcards in the spreadsheet, avoiding repeating the tag for all cards.
+
+---
+
+## Setup
+
+1. Keep the Excel spreadsheet updated with flashcard data in the `Flashcards` sheet.
+2. Ensure that the flashcard registration system window is open and correctly positioned, with compatible resolution for the coordinates defined in the script.
+3. Install the required libraries:
+
+<pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper text-light selection:text-super selection:bg-super/10 my-md relative flex flex-col rounded-lg font-mono text-sm font-normal bg-subtler"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl flex h-0 items-start justify-end md:sticky md:top-[calc(var(--header-height)+var(--size-xs))]"><div class="overflow-hidden rounded-full border-subtlest ring-subtlest divide-subtlest bg-base"><div class="border-subtlest ring-subtlest divide-subtlest bg-subtler"></div></div></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-subtle py-xs px-sm inline-block rounded-br rounded-tl-lg text-xs font-thin">bash</div></div><div><span><code><span><span>pip </span><span class="token token">install</span><span> openpyxl pyautogui
+</span></span><span></span></code></span></div></div></div></pre>
+
+4. Run the Python script.
+
+---
+
+## Important Notes
+
+* Click coordinates (`pyautogui.click(x, y)`) are fixed and may need adjustments depending on your screen resolution and layout.
+* The script assumes the tag is fixed and will be filled in only once according to the spreadsheet.
+* For other uses, it may be necessary to adapt the code to clear or change the tag according to your requirements.
+* Using `sleep` or pauses may be necessary if the system takes time to respond between steps.
+
+---
+
+## Spreadsheet Structure
+
+| Column | Description        |
+| ------ | ------------------ |
+| A      | Front of flashcard |
+| B      | Back of flashcard  |
+| C      | Flashcard tag      |
+
+---
+
+## Objective
+
+Automate the quick insertion of flashcards, saving time and reducing manual typing errors.
+
+---
+
+## Contact/Contributions
+
+Feel free to suggest improvements or report issues.
+
+# (PT-BR Version) Automação de Adição de Flashcards
 
 Este projeto automatiza o processo de adição de flashcards em um sistema, utilizando dados previamente organizados em uma planilha Excel. O script lê as informações e insere os dados em campos específicos da interface através de cliques e digitação automatizados.
 
